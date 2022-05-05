@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chat Beta</title>
+        <script src="index.js"></script>
+    </head>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+        body{
+    margin: 0;
+
+}
+
+.body{
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+}
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.left {
+  flex: 0 0 75%;
+  height: 100vh;
+  overflow-y: scroll;
+overflow-x: hidden;
+background-color: #191919;
+
+}
+.left::-webkit-scrollbar {
+    display: none;
+}
+
+
+.right {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #232323;
+  color: white;
+}
+.right::-webkit-scrollbar {
+    display: none;
+}
+
+#board {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.column {
+  padding: 10px;
+}
+
+img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+
+.user {
+	max-width: 200px;
+	flex-basis: 100px;
+	padding: 17px;
+	border-radius: 10px;
+	text-overflow: ellipsis;
+	color: var(--white);
+	position: relative;
+    
+
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+
+.userName{
+
+    background-color: rgba(50,50,50,0.4);
+    border-radius: 3px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    width : 120px;
+  overflow:hidden;
+  display:inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+    
+}
+
+.textInput{
+
+    position: fixed;
+    bottom: 0px;
+    width: 25%;
+    padding: 1%;
+    background-color: #1f1f1f;
+    
+}
+
+.msgInput{
+    background-color: #292929;
+    width: 101%;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    color: white;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+.messages{
+    padding: 10px;
+    padding-bottom: 130px;
+}
+
+.messageDiv{
+    margin-bottom: 20px;
+}
+
+button{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    background-color: #44a4c7;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+button:hover{
+    background-color: #409bbd;
+    font-size: 15px;
+}
+
+
+    </style>
+
+   
+   
+
+    <body>
+        <div class="wrapper">
+            <div class="left">
+                <div id="users" class="container">
+                    
+                </div>
+            </div>
+            <div id="right" class="right">
+                <div id="messages" class="messages">
+
+                </div>
+<div class="textInput">
+    <div id="text">
+        <textarea id="messageText" class="msgInput"></textarea>
+    </div>
+
+<button id="sendButton">Send</button>
+</div>
+            </div>
+        </div>     
+    </body>
+</html>
